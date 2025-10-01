@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "members")
 public class Member {
 
     @Id
@@ -15,12 +17,12 @@ public class Member {
     private String auburnID;
     private String name;
     private String section;
-    private int year;
+    private String year;
     private String role;
 
     public Member() {}
 
-    public Member(String auburnID, String name, String section, int year, String role) {
+    public Member(String auburnID, String name, String section, String year, String role) {
         this.auburnID = auburnID;
         this.name = name;
         this.section = section;
@@ -56,11 +58,11 @@ public class Member {
         this.section = section;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
